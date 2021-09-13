@@ -1,0 +1,21 @@
+{
+  "name": "maxzhang/all-in-one-sdk",
+  "description": "淘客相关第三方Api聚合SDK，只需一个引用，调遍所有平台",
+  "type": "library",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Max zhang",
+      "email": "373884384@qq.com"
+    }
+  ],
+  "require": {
+    "php": ">=7",
+    "ext-json": "*",
+    "ext-curl": "*"
+  },
+  "autoload-dev": {
+    "psr-4": {
+    }
+  }
+}
