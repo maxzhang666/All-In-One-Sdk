@@ -10,5 +10,4 @@ class HaoDanKuClient extends BaseClient
     {
         return $this->root;
     }
-
 }
