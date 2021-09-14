@@ -2,7 +2,7 @@
 
 namespace MaxZhang\AllInOne\Request;
 
-abstract class HaoDanKuRequest extends BaseRequest
+abstract class HaoDanKuRequest extends BaseRequest implements IRequest
 {
     protected $apikey;
 

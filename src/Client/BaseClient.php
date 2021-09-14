@@ -16,21 +16,7 @@ abstract class BaseClient implements IClient
     /**
      * @throws \MaxZhang\AllInOne\Exceptions\HttpException
      */
-    public function execute(IRequest $request)
-    {
-        //检查参数完整性
-        $request->check();
-
-        $paramsArray = $request->getApiParams() ?? [];
-
-        try {
-            $res = $this->curl($request->getApiMethodUrl(), $paramsArray);
-            $obj = json_decode($res, true);
-            return json_last_error() ? $res : $obj;
-        } catch (HttpException $e) {
-            throw  new HttpException("[" . $request->getApiMethodUrl() . "]" . $e->getMessage(), $e->getCode());
-        }
-    }
+    public abstract function execute(IRequest $request);
 
     protected function curl($url, $dataFields = null, $methodType = RequestMethodType::GET, $header = [], $postType = RequestPostType::JSON)
     {
