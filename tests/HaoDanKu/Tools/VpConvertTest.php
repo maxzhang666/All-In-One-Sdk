@@ -7,7 +7,8 @@ use MaxZhang\AllInOne\Apps\HaoDanKu\Tools\VpConvertRequest;
 use MaxZhang\AllInOne\Client\HaoDanKuClient;
 
 use Tests\BaseTest;
-use Tests\HaoDanKuBaseTest;
+use Tests\HaoDanKu\HaoDanKuBaseTest;
+
 
 class VpConvertTest extends HaoDanKuBaseTest
 {
@@ -19,7 +20,7 @@ class VpConvertTest extends HaoDanKuBaseTest
     public function vpConvert()
     {
 
-        $req = new VpConvertRequest();
+        $req          = new VpConvertRequest();
         $req->pid     = '';
         $req->goodsid = '6918140243598218974';
 

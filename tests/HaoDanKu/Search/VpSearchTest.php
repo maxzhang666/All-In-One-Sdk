@@ -1,8 +1,9 @@
 <?php
 
-namespace Tests\HaoDanKu\Tools;
+namespace Tests\HaoDanKu\Search;
 
-use MaxZhang\AllInOne\Apps\HaoDanKu\Tools\VpSearchRequest;
+
+use MaxZhang\AllInOne\Apps\HaoDanKu\Search\VpSearchRequest;
 use Tests\BaseTest;
 use Tests\HaoDanKu\HaoDanKuBaseTest;
 

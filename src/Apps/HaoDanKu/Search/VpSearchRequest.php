@@ -1,6 +1,6 @@
 <?php
 
-namespace MaxZhang\AllInOne\Apps\HaoDanKu\Tools;
+namespace MaxZhang\AllInOne\Apps\HaoDanKu\Search;
 
 use MaxZhang\AllInOne\Exceptions\InvalidArgumentException;
 use MaxZhang\AllInOne\Request\HaoDanKuRequest;
