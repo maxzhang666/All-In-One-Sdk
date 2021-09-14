@@ -21,7 +21,7 @@ class VpConvertTest extends HaoDanKuBaseTest
     {
 
         $req          = new VpConvertRequest();
-        $req->pid     = '';
+        $req->pid     = $this->config['HaoDanKu_pid'];
         $req->goodsid = '6918140243598218974';
 
         $res = $this->client->execute($req);
