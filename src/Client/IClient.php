@@ -9,5 +9,7 @@ use MaxZhang\AllInOne\Request\IRequest;
  */
 interface IClient
 {
+    public function getRootServer(): string;
+
     public function execute(IRequest $request);
 }
