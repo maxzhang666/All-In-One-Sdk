@@ -31,7 +31,7 @@ abstract class HaoDanKuRequest extends BaseRequest implements IRequest
     /**
      * @inheritDoc
      */
-    function getApiMethodUrl(): array
+    function getApiMethodUrl(): string
     {
         return $this->apiMethodUrl;
     }

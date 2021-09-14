@@ -30,9 +30,9 @@ interface IRequest
 
     /**
      * 获取接口的方法名称
-     * @return array
+     * @return string
      */
-    public function getApiMethodUrl(): array;
+    public function getApiMethodUrl(): string;
 
     /**
      * @param string $method

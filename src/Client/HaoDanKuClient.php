@@ -29,7 +29,7 @@ class HaoDanKuClient extends BaseClient implements IClient
         $paramsArray['apikey'] = $this->apikey;
 
         try {
-            $res = $this->curl($request->getApiMethodUrl(), $paramsArray);
+            $res = $this->curl($this->root . $request->getApiMethodUrl(), $paramsArray, $request->getMethodType(), [], $request->getPostType());
             $obj = json_decode($res, true);
             return json_last_error() ? $res : $obj;
         } catch (HttpException $e) {

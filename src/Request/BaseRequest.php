@@ -35,9 +35,9 @@ abstract class BaseRequest implements IRequest
 
     /**
      * 获取接口的方法名称
-     * @return array
+     * @return string
      */
-    public abstract function getApiMethodUrl(): array;
+    public abstract function getApiMethodUrl(): string;
 
     /**
      * @param string $method
