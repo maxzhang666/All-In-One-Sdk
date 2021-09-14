@@ -21,7 +21,6 @@ abstract class BaseClient implements IClient
     protected function curl($url, $dataFields = null, $methodType = RequestMethodType::GET, $header = [], $postType = RequestPostType::JSON)
     {
         $ch = curl_init();
-        curl_setopt($ch, CURLOPT_URL, $url);
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
         curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true);
         curl_setopt($ch, CURLOPT_FAILONERROR, false);
@@ -46,6 +45,9 @@ abstract class BaseClient implements IClient
             curl_setopt($ch, CURLOPT_POSTFIELDS, $postData);
 
         }
+
+        // 配置请求地址
+        curl_setopt($ch, CURLOPT_URL, $url);
 
         // 配置请求头
         curl_setopt($ch, CURLOPT_HTTPHEADER, $header);

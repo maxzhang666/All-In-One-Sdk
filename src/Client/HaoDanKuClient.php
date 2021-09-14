@@ -3,6 +3,7 @@
 namespace MaxZhang\AllInOne\Client;
 
 use MaxZhang\AllInOne\Exceptions\HttpException;
+use MaxZhang\AllInOne\Exceptions\InvalidArgumentException;
 use MaxZhang\AllInOne\Request\IRequest;
 
 class HaoDanKuClient extends BaseClient implements IClient
@@ -25,7 +26,12 @@ class HaoDanKuClient extends BaseClient implements IClient
         //检查参数完整性
         $request->check();
 
-        $paramsArray           = $request->getApiParams() ?? [];
+        $paramsArray = $request->getApiParams() ?? [];
+
+        if (empty($this->apikey)) {
+            throw new InvalidArgumentException('apikey is required!');
+        }
+
         $paramsArray['apikey'] = $this->apikey;
 
         try {

@@ -23,7 +23,24 @@ class VpSearchTest extends HaoDanKuBaseTest
 
         print_r($res);
 
-        self::assertIsBool($res['code'] == 1);
+        self::assertIsBool($res['code'] == 1 && count($res['data']) > 0);
+    }
+
+    /**
+     * @test
+     * @throws \MaxZhang\AllInOne\Exceptions\HttpException
+     */
+    public function searchNotFoundTest()
+    {
+        $req = new VpSearchRequest();
+
+        $req->keyword = '691814024359821';
+
+        $res = $this->client->execute($req);
+
+        print_r($res);
+
+        self::assertIsBool($res['code'] == 1 && count($res['data']) == 0);
     }
 
 }
