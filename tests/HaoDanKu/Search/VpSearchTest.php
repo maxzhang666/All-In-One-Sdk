@@ -18,7 +18,7 @@ class VpSearchTest extends HaoDanKuBaseTest
     {
         $req = new VpSearchRequest();
 
-        $req->keyword = '6918140243598218974';
+        $req->keyword = '6918800861599582491';
 
         $res = $this->client->execute($req);
 
