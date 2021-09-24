@@ -14,7 +14,7 @@ interface IRequest
      * 生成参数表
      * @return array
      */
-    public function generateParams(): array;
+    function generateParams(): array;
 
     /**
      * 参数有效性检测

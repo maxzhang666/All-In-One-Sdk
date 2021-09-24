@@ -19,7 +19,7 @@ abstract class BaseRequest implements IRequest
      * 生成参数表
      * @return array
      */
-    public abstract function generateParams(): array;
+    abstract function generateParams(): array;
 
     /**
      * 参数有效性检测

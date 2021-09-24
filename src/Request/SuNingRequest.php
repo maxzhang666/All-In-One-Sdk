@@ -2,31 +2,35 @@
 
 namespace MaxZhang\AllInOne\Request;
 
-class SuNingRequest extends BaseRequest implements IRequest
+abstract class SuNingRequest extends BaseRequest implements IRequest
 {
 
     /**
      * @inheritDoc
      */
-    public function generateParams(): array
-    {
-        // TODO: Implement generateParams() method.
-    }
+    abstract public function generateParams(): array;
+
+    abstract function getApiName(): string;
+
 
     /**
      * @inheritDoc
      */
-    public function check(): bool
-    {
-        // TODO: Implement check() method.
-    }
+    abstract public function check(): bool;
 
     /**
      * @inheritDoc
      */
     public function getApiParams(): array
     {
-        // TODO: Implement getApiParams() method.
+        $para = $this->generateParams();
+        return [
+            "sn_request" => [
+                "sn_body" => [
+                    $this->getApiName() => $para
+                ]
+            ]
+        ];
     }
 
     /**
@@ -34,6 +38,6 @@ class SuNingRequest extends BaseRequest implements IRequest
      */
     public function getApiMethodUrl(): string
     {
-        // TODO: Implement getApiMethodUrl() method.
+        return '';
     }
 }
