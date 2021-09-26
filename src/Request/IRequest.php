@@ -37,14 +37,14 @@ interface IRequest
     /**
      * @param string $method
      */
-    public function setMethodType(string $method = RequestMethodType::GET): void;
+    public function setMethodType(string $method = RequestMethodType::GET);
 
     public function getMethodType(): string;
 
     /**
      * @param string $postType
      */
-    public function setPostType(string $postType = RequestPostType::JSON): void;
+    public function setPostType(string $postType = RequestPostType::JSON);
 
     public function getPostType(): string;
 }

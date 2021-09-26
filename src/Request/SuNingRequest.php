@@ -3,12 +3,15 @@
 namespace MaxZhang\AllInOne\Request;
 
 
+use MaxZhang\AllInOne\Constants\RequestMethodType;
 use MaxZhang\AllInOne\Exceptions\InvalidArgumentException;
 
 abstract class SuNingRequest extends BaseRequest implements IRequest
 {
 
     protected $apiName;
+    protected $apiMethodUrl;
+    protected $methodType = RequestMethodType::POST;
 
     /**
      * @inheritDoc
@@ -30,13 +33,21 @@ abstract class SuNingRequest extends BaseRequest implements IRequest
             throw new InvalidArgumentException("apiName can not null!");
         }
         $para = $this->generateParams();
-        return [
+
+        $res = [
             "sn_request" => [
                 "sn_body" => [
-                    $this->apiName => $para
+                    $this->apiName => []
                 ]
             ]
         ];
+
+        foreach ($para as $key => $item) {
+            if (!is_null($item)) {
+                $res['sn_request']['sn_body'][$this->apiName][$key] = $item;
+            }
+        }
+        return $res;
     }
 
     /**
@@ -44,6 +55,6 @@ abstract class SuNingRequest extends BaseRequest implements IRequest
      */
     public function getApiMethodUrl(): string
     {
-        return $this->apiName;
+        return $this->apiMethodUrl;
     }
 }

@@ -8,7 +8,8 @@ use MaxZhang\AllInOne\Request\SuNingRequest;
 class SearchRequest extends SuNingRequest implements IRequest
 {
 
-    protected $apiName = "suning.netalliance.searchcommodity.query";
+    protected $apiName = "querySearchcommodity";
+    protected $apiMethodUrl="suning.netalliance.searchcommodity.query";
 
     /**
      * @var string 页码 默认为1

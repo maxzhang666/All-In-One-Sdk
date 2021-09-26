@@ -42,7 +42,7 @@ abstract class BaseRequest implements IRequest
     /**
      * @param string $method
      */
-    public function setMethodType(string $method = RequestMethodType::GET): void
+    public function setMethodType(string $method = RequestMethodType::GET)
     {
         $this->methodType = $method;
     }
@@ -50,7 +50,7 @@ abstract class BaseRequest implements IRequest
     /**
      * @param string $postType
      */
-    public function setPostType(string $postType = RequestPostType::JSON): void
+    public function setPostType(string $postType = RequestPostType::JSON)
     {
         $this->postType = $postType;
     }

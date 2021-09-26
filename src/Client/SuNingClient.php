@@ -12,9 +12,9 @@ class SuNingClient extends BaseClient implements IClient
     private $appsec;
     private $accessToken;
 
-    private $appVersion = 'suning-sdk-php-beta0.1';
+    private $appVersion = 'v1.2';
 
-    public function __construct($appkey, $appsec, $accessToken)
+    public function __construct($appkey, $appsec, $accessToken = '')
     {
         $this->appkey      = $appkey;
         $this->appsec      = $appsec;
@@ -40,11 +40,14 @@ class SuNingClient extends BaseClient implements IClient
         // 组装头文件信息
         $signDataHeader = array(
             'Content-Type: text/xml; charset=utf-8',
-            'AppMethod: ' . $params['method'],
-            'AppRequestTime: ' . $params['date'],
+            //'AppMethod: ' . $params['method'],
+            'appMethod: ' . $params['method'],
+            'appRequestTime: ' . $params['appRequestTime'],
+            'AppRequestTime: ' . $params['appRequestTime'],
             'Format: json',
             'signInfo: ' . $signString,
-            'AppKey: ' . $params['app_key'],
+            'appKey: ' . $params['app_key'],
+            //'AppKey: ' . $params['app_key'],
             'VersionNo: ' . $params['api_version'],
             'User-Agent: suning-sdk-php',
             'Sdk-Version: ' . $this->appVersion,
@@ -59,7 +62,7 @@ class SuNingClient extends BaseClient implements IClient
 
     public function getRootServer(): string
     {
-        return 'https://openpre.cnsuning.com/api/http/sopRequest';
+        return 'https://open.suning.com/api/http/sopRequest';
     }
 
     /**
@@ -72,17 +75,17 @@ class SuNingClient extends BaseClient implements IClient
         $apiParams = $request->getApiParams();
 
         // 组装系统参数
-        $sysParams['secret_key']  = $this->appsec;
-        $sysParams['method']      = $request->getApiMethodUrl()();
-        $sysParams['date']        = date('Y-m-d H:i:s');
-        $sysParams['app_key']     = $this->appkey;
-        $sysParams['api_version'] = $this->appVersion;
-        $sysParams['post_field']  = base64_encode(json_encode($apiParams));
+        $sysParams['secret_key']     = $this->appsec;
+        $sysParams['method']         = $request->getApiMethodUrl();
+        $sysParams['appRequestTime'] = date('Y-m-d H:i:s');
+        $sysParams['app_key']        = $this->appkey;
+        $sysParams['api_version']    = $this->appVersion;
+        $sysParams['post_field']     = base64_encode(json_encode($apiParams));
 
         $signHeader = $this->generateSignHeader($sysParams);
 
         try {
-            $res = $this->curl($this->getRootServer() . '/' . $request->getApiMethodUrl(), $apiParams, $request->getMethodType(), $signHeader);
+            $res = $this->curl($this->getRootServer() , $apiParams, $request->getMethodType(), $signHeader);
             $obj = json_decode($res, true);
             return json_last_error() ? $res : $obj;
         } catch (HttpException $e) {
