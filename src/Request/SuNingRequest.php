@@ -2,16 +2,18 @@
 
 namespace MaxZhang\AllInOne\Request;
 
+
+use MaxZhang\AllInOne\Exceptions\InvalidArgumentException;
+
 abstract class SuNingRequest extends BaseRequest implements IRequest
 {
+
+    protected $apiName;
 
     /**
      * @inheritDoc
      */
     abstract public function generateParams(): array;
-
-    abstract function getApiName(): string;
-
 
     /**
      * @inheritDoc
@@ -20,14 +22,18 @@ abstract class SuNingRequest extends BaseRequest implements IRequest
 
     /**
      * @inheritDoc
+     * @throws \MaxZhang\AllInOne\Exceptions\InvalidArgumentException
      */
     public function getApiParams(): array
     {
+        if (is_null($this->apiName)) {
+            throw new InvalidArgumentException("apiName can not null!");
+        }
         $para = $this->generateParams();
         return [
             "sn_request" => [
                 "sn_body" => [
-                    $this->getApiName() => $para
+                    $this->apiName => $para
                 ]
             ]
         ];
@@ -38,6 +44,6 @@ abstract class SuNingRequest extends BaseRequest implements IRequest
      */
     public function getApiMethodUrl(): string
     {
-        return '';
+        return $this->apiName;
     }
 }
