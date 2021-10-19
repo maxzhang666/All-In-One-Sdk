@@ -4,5 +4,9 @@ return [
     "HaoDanKu_pid"    => '',
 
     "SuNing_appkey" => "",
-    "SuNing_appsec" => ""
+    "SuNing_appsec" => "",
+
+    "DaTaoKe_appkey" => "",
+    "DaTaoKe_appsec" => "",
+
 ];
