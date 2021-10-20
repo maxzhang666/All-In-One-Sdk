@@ -24,7 +24,7 @@ use MaxZhang\AllInOne\Exceptions\InvalidArgumentException;
  *
  * }
  */
-class PromotionUnionConvert extends \MaxZhang\AllInOne\Request\DaTaoKeRequest
+class PromotionUnionConvertRequest extends \MaxZhang\AllInOne\Request\DaTaoKeRequest
 {
 
     /**
