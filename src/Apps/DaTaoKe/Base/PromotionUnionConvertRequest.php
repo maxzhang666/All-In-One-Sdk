@@ -27,6 +27,9 @@ use MaxZhang\AllInOne\Exceptions\InvalidArgumentException;
 class PromotionUnionConvertRequest extends \MaxZhang\AllInOne\Request\DaTaoKeRequest
 {
 
+    protected $apiMethodName = 'api/dels/jd/kit/promotion-union-convert';
+    protected $version = 'v1.0.0';
+
     /**
      * 推客的联盟ID
      * @var int
