@@ -22,5 +22,7 @@ class PromotionUnionConvertRequestTest extends DaTaoKeBaseTest
 
         print_r($res);
 
+        self::assertIsBool(array_key_exists('code', $res));
+
     }
 }
