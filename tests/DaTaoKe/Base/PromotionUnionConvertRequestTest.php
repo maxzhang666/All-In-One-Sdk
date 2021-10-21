@@ -14,7 +14,8 @@ class PromotionUnionConvertRequestTest extends DaTaoKeBaseTest
     function ConvertTest()
     {
         $req             = new PromotionUnionConvertRequest();
-        $req->materialId = 'https://item.jd.com/100013879620.html';
+        $itemId=100013879620;
+        $req->materialId = "https://item.jd.com/$itemId.html";
         $req->unionId    = $this->config['DaTaoKe_unionId'];
         $req->positionId = $this->config['DaTaoKe_positionId'];
 
