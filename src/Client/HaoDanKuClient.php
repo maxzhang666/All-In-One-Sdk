@@ -8,7 +8,7 @@ use MaxZhang\AllInOne\Request\IRequest;
 
 class HaoDanKuClient extends BaseClient implements IClient
 {
-    protected $root = 'https://v2.api.haodanku.com/';
+    protected $root = 'http://v2.api.haodanku.com/';
     private $apikey;
 
 
