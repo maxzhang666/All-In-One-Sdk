@@ -21,7 +21,7 @@ class DaTaoKeClient extends BaseClient implements IClient
 
     public function getRootServer(): string
     {
-        return 'https://openapi.dataoke.com/';
+        return 'http://openapi.dataoke.com/';
     }
 
     /**

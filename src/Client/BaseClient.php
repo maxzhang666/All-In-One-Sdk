@@ -25,7 +25,7 @@ abstract class BaseClient implements IClient
         curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true);
         curl_setopt($ch, CURLOPT_FAILONERROR, false);
         curl_setopt($ch, CURLOPT_HEADER, false);
-        curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+
         // curl_setopt($ch, CURLOPT_TIMEOUT, self::$readTimeout);
         // curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, self::$connectTimeout);
 
