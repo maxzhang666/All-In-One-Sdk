@@ -17,12 +17,13 @@ class DetailSearchTest extends SuNingBaseTest
     {
         $request = new DetailRequest();
 
-        $request->commodityStr='11301978219-0000000000';
+        $request->commodityStr = '11301978219-0000000000';
 
         $res = $this->client->execute($request);
 
         print_r($res);
 
+        self::assertIsBool(array_key_exists('sn_responseContent', $res));
     }
 
 }
