@@ -2,7 +2,7 @@
 
 namespace Tests\DaTaoKe\Jd;
 
-use MaxZhang\AllInOne\Apps\DaTaoKe\Jd\Base\PromotionUnionConvertRequest;
+use MaxZhang\AllInOne\Apps\DaTaoKe\Base\PromotionUnionConvertRequest;
 use Tests\DaTaoKe\DaTaoKeBaseTest;
 
 class PromotionUnionConvertRequestTest extends DaTaoKeBaseTest
