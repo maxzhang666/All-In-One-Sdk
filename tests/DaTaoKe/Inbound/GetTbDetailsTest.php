@@ -2,7 +2,7 @@
 
 namespace Tests\DaTaoKe\Inbound;
 
-use MaxZhang\AllInOne\Apps\DaTaoKe\Inbound\GetTbDetails;
+use MaxZhang\AllInOne\Apps\DaTaoKe\Jd\Inbound\GetTbDetails;
 use Tests\DaTaoKe\DaTaoKeBaseTest;
 
 class GetTbDetailsTest extends DaTaoKeBaseTest

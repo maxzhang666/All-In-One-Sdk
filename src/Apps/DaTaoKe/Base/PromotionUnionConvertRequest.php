@@ -6,7 +6,8 @@ use MaxZhang\AllInOne\Exceptions\InvalidArgumentException;
 use MaxZhang\AllInOne\Request\DaTaoKeRequest;
 
 /**
- *
+ * @deprecated 已迁移至 MaxZhang\AllInOne\Apps\DaTaoKe\Jd\Base\PromotionUnionConvertRequest
+ * @version 1.0.0
  * 京东商品转链
  * 应用场景：
  * 通常用户在京东商品详情页点击分享或者自购按钮时，调用转链接口

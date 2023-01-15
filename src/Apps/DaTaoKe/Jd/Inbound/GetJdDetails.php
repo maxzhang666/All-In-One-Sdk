@@ -1,13 +1,13 @@
 <?php
 
-namespace MaxZhang\AllInOne\Apps\DaTaoKe\Inbound;
+namespace MaxZhang\AllInOne\Apps\DaTaoKe\Jd\Inbound;
 
 use MaxZhang\AllInOne\Exceptions\InvalidArgumentException;
 use MaxZhang\AllInOne\Request\DaTaoKeRequest;
 
 /**
- * @deprecated 请使用 MaxZhang\AllInOne\Apps\DaTaoKe\Jd\Inbound\GetJdDetails
  *
+ * @version 1.0.0
  * 应用场景：
  * 当用户点击某个京东商品时，调用该接口。获取对应商品的详细信息
  * 接口说明：
