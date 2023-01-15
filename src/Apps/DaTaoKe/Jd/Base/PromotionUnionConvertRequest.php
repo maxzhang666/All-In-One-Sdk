@@ -1,8 +1,9 @@
 <?php
 
-namespace MaxZhang\AllInOne\Apps\DaTaoKe\Base;
+namespace MaxZhang\AllInOne\Apps\DaTaoKe\Jd\Base;
 
 use MaxZhang\AllInOne\Exceptions\InvalidArgumentException;
+use MaxZhang\AllInOne\Request\DaTaoKeRequest;
 
 /**
  *
@@ -24,7 +25,7 @@ use MaxZhang\AllInOne\Exceptions\InvalidArgumentException;
  *
  * }
  */
-class PromotionUnionConvertRequest extends \MaxZhang\AllInOne\Request\DaTaoKeRequest
+class PromotionUnionConvertRequest extends DaTaoKeRequest
 {
 
     protected $apiMethodName = 'api/dels/jd/kit/promotion-union-convert';
