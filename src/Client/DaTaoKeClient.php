@@ -12,7 +12,7 @@ class DaTaoKeClient extends BaseClient implements IClient
     protected $appKey;
     protected $appSec;
 
-    public function __construct($appKey, $appSec)
+    public function __construct($appKey, $appSec = '')
     {
         $this->appKey = $appKey;
         $this->appSec = $appSec;
@@ -35,9 +35,9 @@ class DaTaoKeClient extends BaseClient implements IClient
         if (empty($this->appKey)) {
             throw new InvalidArgumentException("appKey can not empty ！");
         }
-        if (empty($this->appSec)) {
-            throw new InvalidArgumentException("appSecret can not empty ！");
-        }
+        //if (empty($this->appSec)) {
+        //    throw new InvalidArgumentException("appSecret can not empty ！");
+        //}
         try {
             $request->check();
         } catch (Exception $e) {
@@ -69,12 +69,13 @@ class DaTaoKeClient extends BaseClient implements IClient
         $_para = [];
         //过滤无效数据
         foreach ($para as $k => $value) {
-            if (!empty($value)) {
+            if (!empty($value) || !isset($value)) {
                 $_para[$k] = $value;
             }
         }
-        $sign          = $this->makeSign($_para, $this->appSec);
-        $_para['sign'] = $sign;
+        //不需要签名
+        //$sign          = $this->makeSign($_para, $this->appSec);
+        //$_para['sign'] = $sign;
         return $_para;
     }
 
