@@ -16,10 +16,7 @@ class PromotionUnionConvertRequestTest extends DaTaoKeBaseTest
     {
         $req             = new BatchPromotionUnionConvertRequest();
         $itemId          = 100013879620;
-        $req->content = "迪士尼洗脸巾45抽*6包，到手29.9元
-https://item.jd.com/100039661805.html
-叠加京喜app商品下方6劵
-目前有赠品同款1卷，以实际结算页为准";
+        $req->content = "迪士尼洗脸巾45抽*6包，到手29.9元\nhttps://item.jd.com/100039661805.html\n叠加京喜app商品下方6劵\n目前有赠品同款1卷，以实际结算页为准";
         $req->unionId    = $this->config['DaTaoKe_unionId'];
         //$req->positionId = $this->config['DaTaoKe_positionId'];
 
