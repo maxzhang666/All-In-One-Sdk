@@ -51,7 +51,7 @@ class DaTaoKeClient extends BaseClient implements IClient
         $paramsArray           = $this->signSendData($paramsArray);
 
         try {
-            $resp = self::curl($this->getRootServer() . $request->getApiMethodUrl(), $paramsArray);
+            $resp = $this->curl($this->getRootServer() . $request->getApiMethodUrl(), $paramsArray);
             $obj  = json_decode($resp, true);
             return json_last_error() ? $resp : $obj;
         } catch (Exception $e) {
