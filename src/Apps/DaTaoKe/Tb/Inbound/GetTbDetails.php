@@ -1,13 +1,10 @@
 <?php
 
-namespace MaxZhang\AllInOne\Apps\DaTaoKe\Inbound;
+namespace MaxZhang\AllInOne\Apps\DaTaoKe\Tb\Inbound;
 
 use MaxZhang\AllInOne\Exceptions\InvalidArgumentException;
 use MaxZhang\AllInOne\Request\DaTaoKeRequest;
 
-/**
- * @deprecated 请使用MaxZhang\AllInOne\Apps\DaTaoKe\Tb\Inbound\GetTbDetails
- */
 class GetTbDetails extends DaTaoKeRequest
 {
 
