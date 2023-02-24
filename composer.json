@@ -12,7 +12,8 @@
   "require": {
     "php": ">=7",
     "ext-json": "*",
-    "ext-curl": "*"
+    "ext-curl": "*",
+    "ext-http": "*"
   },
   "autoload": {
     "psr-4": {
