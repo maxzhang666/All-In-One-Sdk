@@ -13,7 +13,7 @@ abstract class DaTaoKeRequest extends BaseRequest implements IRequest
     /**
      * 生成参数表
      */
-    abstract function generateParams(): array;
+    abstract public function generateParams(): array;
 
     /**
      * @return mixed

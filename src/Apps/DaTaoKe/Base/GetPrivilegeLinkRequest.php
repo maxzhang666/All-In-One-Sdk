@@ -76,7 +76,7 @@ class GetPrivilegeLinkRequest extends DaTaoKeRequest
     /**
      * 生成参数表
      */
-    function generateParams(): array
+    public function generateParams(): array
     {
         return [
             'goodsId'     => $this->goodsId,
