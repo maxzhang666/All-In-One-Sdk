@@ -2,7 +2,7 @@
 
 namespace Tests\DaTaoKe\Search;
 
-use MaxZhang\AllInOne\Apps\DaTaoKe\Search\JdSearchRequest;
+use MaxZhang\AllInOne\Apps\DaTaoKe\Jd\Search\JdSearchRequest;
 use Tests\DaTaoKe\DaTaoKeBaseTest;
 
 class JdSearchRequestTest extends DaTaoKeBaseTest

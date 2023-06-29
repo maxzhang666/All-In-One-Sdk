@@ -1,8 +1,7 @@
 <?php
 
-namespace MaxZhang\AllInOne\Apps\DaTaoKe\Search;
+namespace MaxZhang\AllInOne\Apps\DaTaoKe\Jd\Search;
 
-use MaxZhang\AllInOne\Exceptions\InvalidArgumentException;
 use MaxZhang\AllInOne\Request\DaTaoKeRequest;
 
 /**

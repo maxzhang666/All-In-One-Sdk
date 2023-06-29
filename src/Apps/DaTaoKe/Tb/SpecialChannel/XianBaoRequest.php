@@ -1,8 +1,7 @@
 <?php
 
-namespace MaxZhang\AllInOne\Apps\DaTaoKe\SpecialChannel;
+namespace MaxZhang\AllInOne\Apps\DaTaoKe\Tb\SpecialChannel;
 
-use MaxZhang\AllInOne\Exceptions\InvalidArgumentException;
 use MaxZhang\AllInOne\Request\DaTaoKeRequest;
 
 /**
