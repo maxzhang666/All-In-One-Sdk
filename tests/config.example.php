@@ -9,4 +9,7 @@ return [
     "DaTaoKe_appkey" => "",
     "DaTaoKe_appsec" => "",
 
+    "ZheTaoKe_appkey" => "",
+    "ZheTaoKe_JD_UnionId" => "",
+
 ];
