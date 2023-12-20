@@ -11,6 +11,11 @@ abstract class DaTaoKeRequest extends BaseRequest implements IRequest
     protected $version;
 
     /**
+     * @var bool 是否验签(玛德脑瘫大淘客,有的接口验签有的不验签,不验签的加签还报错,shit!)
+     */
+    public $needSign = false;
+
+    /**
      * 生成参数表
      */
     abstract public function generateParams(): array;

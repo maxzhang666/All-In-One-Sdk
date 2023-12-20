@@ -10,13 +10,13 @@ use MaxZhang\AllInOne\Request\IRequest;
 
 abstract class BaseClient implements IClient
 {
-    public abstract function getRootServer(): string;
+    abstract public function getRootServer(): string;
 
 
     /**
      * @throws \MaxZhang\AllInOne\Exceptions\HttpException
      */
-    public abstract function execute(IRequest $request);
+    abstract public function execute(IRequest $request);
 
     protected function curl($url, $dataFields = null, $methodType = RequestMethodType::GET, $header = [], $postType = RequestPostType::JSON)
     {

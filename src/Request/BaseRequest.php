@@ -25,19 +25,19 @@ abstract class BaseRequest implements IRequest
      * 参数有效性检测
      * @return bool
      */
-    public abstract function check(): bool;
+    abstract public function check(): bool;
 
     /**
      * 获取组装好的请求数据
      * @return array
      */
-    public abstract function getApiParams(): array;
+    abstract public function getApiParams(): array;
 
     /**
      * 获取接口的方法名称
      * @return string
      */
-    public abstract function getApiMethodUrl(): string;
+    abstract public function getApiMethodUrl(): string;
 
     /**
      * @param string $method

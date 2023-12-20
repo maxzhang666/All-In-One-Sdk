@@ -5,9 +5,10 @@ namespace MaxZhang\AllInOne\Client;
 use MaxZhang\AllInOne\Exceptions\Exception;
 use MaxZhang\AllInOne\Exceptions\HttpException;
 use MaxZhang\AllInOne\Exceptions\InvalidArgumentException;
+use MaxZhang\AllInOne\Request\DaTaoKeRequest;
 use MaxZhang\AllInOne\Request\IRequest;
 
-class DaTaoKeClient extends BaseClient implements IClient
+class DaTaoKeClient extends BaseClient //implements IClient
 {
     protected $appKey;
     protected $appSec;
@@ -30,7 +31,7 @@ class DaTaoKeClient extends BaseClient implements IClient
      */
     public function execute(IRequest $request)
     {
-
+        //$request = (DaTaoKeRequest)$request;
         //参数检查
         if (empty($this->appKey)) {
             throw new InvalidArgumentException("appKey can not empty ！");
@@ -48,7 +49,7 @@ class DaTaoKeClient extends BaseClient implements IClient
             $paramsArray = [];
         }
         $paramsArray['appKey'] = $this->appKey;
-        $paramsArray           = $this->signSendData($paramsArray);
+        $paramsArray           = $this->signSendData($paramsArray, $request->needSign);
 
         try {
             $resp = $this->curl($this->getRootServer() . $request->getApiMethodUrl(), $paramsArray);
@@ -61,10 +62,11 @@ class DaTaoKeClient extends BaseClient implements IClient
 
     /**
      * 对发送数据进行签名
-     * @param $para
+     * @param      $para
+     * @param bool $needSign
      * @return array
      */
-    private function signSendData($para): array
+    private function signSendData($para, $needSign = false): array
     {
         $_para = [];
         //过滤无效数据
@@ -74,8 +76,10 @@ class DaTaoKeClient extends BaseClient implements IClient
             }
         }
         //不需要签名
-        //$sign          = $this->makeSign($_para, $this->appSec);
-        //$_para['sign'] = $sign;
+        if ($needSign) {
+            $sign          = $this->makeSign($_para, $this->appSec);
+            $_para['sign'] = $sign;
+        }
         return $_para;
     }
 

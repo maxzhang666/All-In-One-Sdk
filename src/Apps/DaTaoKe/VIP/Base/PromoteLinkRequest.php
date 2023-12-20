@@ -2,12 +2,13 @@
 
 namespace MaxZhang\AllInOne\Apps\DaTaoKe\VIP\Base;
 
+use MaxZhang\AllInOne\Exceptions\InvalidArgumentException;
 use MaxZhang\AllInOne\Request\DaTaoKeRequest;
 
 class PromoteLinkRequest extends DaTaoKeRequest
 {
     //https://openapi.dataoke.com/api/vip/promote/link
-    protected $apiMethodUrl = "api/vip/promote/link";
+    protected $apiMethodName = "api/vip/promote/link";
     protected $version = "v1.0.0";
     /**
      * @var string 请自行序列化!!!唯品会链接url列表,非联盟链接。格式如'["123123"]'
@@ -33,11 +34,23 @@ class PromoteLinkRequest extends DaTaoKeRequest
 
     public function generateParams(): array
     {
-        // TODO: Implement generateParams() method.
+        return [
+            'urlList'       => $this->urlList,
+            'statParam'     => $this->statParam,
+            'urlGenRequest' => $this->urlGenRequest,
+            'chanTag'       => $this->chanTag,
+            'authId'        => $this->authId,
+        ];
     }
 
-    function check(): bool
+    public function check(): bool
     {
-        // TODO: Implement check() method.
+        if (is_null($this->urlList)) {
+            throw new InvalidArgumentException("urlList is required!");
+        }
+        if (is_null($this->urlGenRequest)) {
+            $this->urlGenRequest = '{"openId": "123abd","adCode": "1cvsn1qk","realCall": "true"}';
+        }
+        return true;
     }
 }
