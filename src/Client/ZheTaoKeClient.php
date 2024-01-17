@@ -11,11 +11,17 @@ class ZheTaoKeClient extends BaseClient implements IClient
 {
     protected $appKey;
     protected $port;
+    protected $sid;
 
     public function __construct($appKey, $port = 10001)
     {
         $this->appKey = $appKey;
         $this->port   = $port;
+    }
+
+    public function setSid($sid)
+    {
+        $this->sid = $sid;
     }
 
 
@@ -48,6 +54,7 @@ class ZheTaoKeClient extends BaseClient implements IClient
             $paramsArray = [];
         }
         $paramsArray['appkey'] = $this->appKey;
+        $paramsArray['sid']    = $this->sid;
 
         try {
             $endpoint = $this->getRootServer() . $request->getApiMethodUrl();

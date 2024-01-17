@@ -15,5 +15,6 @@ class ZheTaoKeBaseTest extends BaseTest
         parent::__construct();
         date_default_timezone_set('PRC');
         $this->client = new ZheTaoKeClient($this->config['ZheTaoKe_appkey']);
+        $this->client->setSid($this->config['ZheTaoKe_sid']);
     }
 }

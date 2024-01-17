@@ -36,7 +36,7 @@ abstract class BaseClient implements IClient
             if (count($dataFields) > 0) {
                 $url .= http_build_query($dataFields);
             }
-            var_dump($url);
+            //var_dump($url);
         } else {
             // post模式下请求参数类型判断
             curl_setopt($ch, CURLOPT_POST, true);
