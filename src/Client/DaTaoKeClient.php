@@ -66,7 +66,7 @@ class DaTaoKeClient extends BaseClient //implements IClient
      * @param bool $needSign
      * @return array
      */
-    private function signSendData($para, $needSign = false): array
+    private function signSendData($para, bool $needSign = false): array
     {
         $_para = [];
         //过滤无效数据

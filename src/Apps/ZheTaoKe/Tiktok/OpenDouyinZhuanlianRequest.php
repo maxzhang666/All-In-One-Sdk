@@ -13,10 +13,6 @@ class OpenDouyinZhuanlianRequest extends ZheTaoKeRequest
     protected $apiMethodName = '/api/open_douyin_zhuanlian.ashx';
 
 
-    /**
-     * @var string 折淘客对接秘钥appkey，折淘客通用
-     */
-    public $appkey;
 
     /**
      * @var string 对应的淘客账号授权SID

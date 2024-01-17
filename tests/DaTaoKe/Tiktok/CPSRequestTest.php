@@ -35,6 +35,7 @@ class CPSRequestTest extends DaTaoKeBaseTest
         $request               = new KolProductShareRequest();
         $request->productUrl   = 'https://haohuo.jinritemai.com/ecommerce/trade/detail/index.html?id=3624312858713682681&origin_type=open_platform&pick_source=v.EpzYo';
         $request->externalInfo = 0;
+        $request->needSign     = true;
 
         $res = $this->client->execute($request);
 

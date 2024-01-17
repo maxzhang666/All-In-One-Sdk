@@ -32,8 +32,8 @@ class KolProductShareRequest extends DaTaoKeRequest
     public function generateParams(): array
     {
         return [
-            'product_url'     => $this->productUrl,
-            'external_info'   => $this->externalInfo,
+            'productUrl'     => $this->productUrl,
+            'externalInfo'   => $this->externalInfo,
             'use_coupon'      => $this->use_coupon,
             'need_share_link' => $this->need_share_link,
         ];
