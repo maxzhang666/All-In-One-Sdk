@@ -18,6 +18,9 @@ abstract class BaseClient implements IClient
      */
     abstract public function execute(IRequest $request);
 
+    /**
+     * @throws HttpException
+     */
     protected function curl($url, $dataFields = null, $methodType = RequestMethodType::GET, $header = [], $postType = RequestPostType::JSON)
     {
         $ch = curl_init();
@@ -41,7 +44,7 @@ abstract class BaseClient implements IClient
             // post模式下请求参数类型判断
             curl_setopt($ch, CURLOPT_POST, true);
             $postData = json_encode($dataFields);
-            if ($postType != RequestPostType::JSON) {
+            if ($postType !== RequestPostType::JSON) {
                 $postData = http_build_query($dataFields);
             }
             $header = array_merge($header, ['Content-type:' . $postType]);
@@ -56,7 +59,7 @@ abstract class BaseClient implements IClient
         curl_setopt($ch, CURLOPT_HTTPHEADER, $header);
 
         // https 请求 忽略证书验证问题
-        if (strlen($url) > 5 && strtolower(substr($url, 0, 5)) == 'https') {
+        if (strlen($url) > 5 && stripos($url, 'https') === 0) {
             curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
             curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, false);
         }
@@ -65,11 +68,11 @@ abstract class BaseClient implements IClient
 
         if (curl_errno($ch)) {
             throw new HttpException(curl_error($ch), 0);
-        } else {
-            $httpStatusCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
-            if (200 !== $httpStatusCode) {
-                throw new HttpException("Network Error！httpStatusCode:[$httpStatusCode],response:[$response]");
-            }
+        }
+
+        $httpStatusCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+        if (200 !== $httpStatusCode) {
+            throw new HttpException("Network Error！httpStatusCode:[$httpStatusCode],response:[$response]");
         }
         curl_close($ch);
 
