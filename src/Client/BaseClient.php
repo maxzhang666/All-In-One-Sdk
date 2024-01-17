@@ -29,12 +29,14 @@ abstract class BaseClient implements IClient
         // curl_setopt($ch, CURLOPT_TIMEOUT, self::$readTimeout);
         // curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, self::$connectTimeout);
 
+
         // 请求方式判断
-        if ($methodType == RequestMethodType::GET) {
+        if ($methodType === RequestMethodType::GET) {
             $url .= '?';
             if (count($dataFields) > 0) {
                 $url .= http_build_query($dataFields);
             }
+            var_dump($url);
         } else {
             // post模式下请求参数类型判断
             curl_setopt($ch, CURLOPT_POST, true);

@@ -15,7 +15,7 @@ use MaxZhang\AllInOne\Request\DaTaoKeRequest;
 class OneYuanGoodsListRequest extends DaTaoKeRequest
 {
 
-    protected $apiMethodName = 'api/tiktok/tiktok-one-yuan-goods-list ';
+    protected $apiMethodName = 'api/tiktok/tiktok-one-yuan-goods-list';
     protected $version = 'v1.0.0';
     /**
      * @var int 分页（从1开始）

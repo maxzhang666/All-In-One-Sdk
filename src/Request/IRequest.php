@@ -34,6 +34,8 @@ interface IRequest
      */
     public function getApiMethodUrl(): string;
 
+    public function getApiServerRoot(): string;
+
     /**
      * @param string $method
      */
