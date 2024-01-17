@@ -2,7 +2,7 @@
 
 namespace MaxZhang\AllInOne\Apps\DaTaoKe\Tb\SpecialChannel;
 
-use http\Exception\InvalidArgumentException;
+use MaxZhang\AllInOne\Exceptions\InvalidArgumentException;
 use MaxZhang\AllInOne\Request\DaTaoKeRequest;
 
 /**
@@ -30,8 +30,8 @@ class GuessLikeRequest extends DaTaoKeRequest
     function generateParams(): array
     {
         return [
-            'id' => $this->id,
-            'size' => $this->size
+            'id'   => $this->id,
+            'size' => $this->size,
         ];
     }
 
