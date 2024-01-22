@@ -14,7 +14,7 @@ class GoodsDetailRequestTest extends DaTaoKeBaseTest
     /**
      * @test
      */
-    function goodsDetailRequest()
+    public function goodsDetailRequest()
     {
         $request = new GoodsDetailRequest();
 
