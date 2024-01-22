@@ -15,7 +15,7 @@ use MaxZhang\AllInOne\Request\DaTaoKeRequest;
 class GoodsDetailRequest extends DaTaoKeRequest
 {
     //https://openapi.dataoke.com/api/vip/goods-detail
-    protected $apiMethodUrl = "api/vip/goods-detail";
+    protected $apiMethodName = "api/vip/goods-detail";
     protected $version = "v1.0.0";
 
     /**
