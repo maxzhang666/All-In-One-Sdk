@@ -18,6 +18,7 @@ class PromotionUnionConvertRequestTest extends DaTaoKeBaseTest
         $req->materialId = "https://item.jd.com/$itemId.html";
         $req->unionId    = $this->config['DaTaoKe_unionId'];
         $req->positionId = $this->config['DaTaoKe_positionId'];
+        $req->needSign   = true;
 
         $res = $this->client->execute($req);
 
