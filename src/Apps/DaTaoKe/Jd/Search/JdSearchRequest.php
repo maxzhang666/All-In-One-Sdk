@@ -12,6 +12,7 @@ use MaxZhang\AllInOne\Request\DaTaoKeRequest;
  * 接口说明：
  * 接口通过关键词搜索以及其他筛选条件返回京东联盟对应条件的商品数据
  * https://www.dataoke.com/kfpt/api-d.html?id=70
+ * @deprecated 官方已废弃
  */
 class JdSearchRequest extends DaTaoKeRequest
 {

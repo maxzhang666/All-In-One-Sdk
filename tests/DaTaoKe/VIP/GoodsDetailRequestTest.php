@@ -18,7 +18,7 @@ class GoodsDetailRequestTest extends DaTaoKeBaseTest
     {
         $request = new GoodsDetailRequest();
 
-        $request->goodsIdList = '["6920687260216040732"]';
+        $request->goodsIdList = '["6920553654703503178"]';
 
         $request->request = '{"openId": "123","realCall": "false"}';
 

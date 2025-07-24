@@ -13,6 +13,7 @@ use MaxZhang\AllInOne\Request\DaTaoKeRequest;
  * 接口说明：
  * 通过京东商品SKUID，获取指定商品的详细详细数据（商品价格，优惠券信息，详情图，主图……） ，最多支持10个商品同时查询
  * https://www.dataoke.com/kfpt/api-d.html?id=64
+ * @deprecated 官方已废弃
  */
 class GetJdDetails extends DaTaoKeRequest
 {

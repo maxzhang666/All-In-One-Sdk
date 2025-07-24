@@ -24,6 +24,7 @@ use MaxZhang\AllInOne\Request\DaTaoKeRequest;
  * }
  *
  * }
+ * @deprecated 官方已废弃
  */
 class BatchPromotionUnionConvertRequest extends DaTaoKeRequest
 {
