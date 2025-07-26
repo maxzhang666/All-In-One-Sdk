@@ -2,6 +2,8 @@
 
 namespace MaxZhang\AllInOne\Apps\HaoDanKu\Jd\Tools;
 
+use MaxZhang\AllInOne\Constants\RequestMethodType;
+use MaxZhang\AllInOne\Constants\RequestPostType;
 use MaxZhang\AllInOne\Request\HaoDanKuRequest;
 
 /**
@@ -23,6 +25,9 @@ class GetJdItemsLinkRequest extends HaoDanKuRequest
     //scene_id	integer	1	否	场景ID
 
     protected $apiMethodUrl = 'get_jditems_link';
+
+    protected $methodType = RequestMethodType::POST;
+    protected $postType = RequestPostType::FORMDATA_URL_ENCODE;
 
     /**
      * @var string 京东联盟商品ID（*必要）

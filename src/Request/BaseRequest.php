@@ -14,6 +14,10 @@ abstract class BaseRequest implements IRequest
     protected $apiMethodUrl;
     protected $apiServerRoot = '';
     protected $postType = RequestPostType::JSON;
+
+    /**
+     * @var string
+     */
     protected $methodType = RequestMethodType::GET;
 
     /**
