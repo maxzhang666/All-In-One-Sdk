@@ -1,7 +1,7 @@
 {
   "name": "maxzhang/all-in-one-sdk",
   "description": "淘客相关第三方Api聚合SDK，只需一个引用，调遍所有平台",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "type": "library",
   "license": "MIT",
   "authors": [
