@@ -72,7 +72,7 @@ abstract class BaseClient implements IClient
 
         $httpStatusCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
         if (200 !== $httpStatusCode) {
-            throw new HttpException("Network Error！httpStatusCode:[$httpStatusCode],response:[$response],url:[$url],data:[$dataFields]");
+            throw new HttpException("Network Error！httpStatusCode:[$httpStatusCode],response:[$response],url:[$url],data:[" . json_encode($dataFields) . "]");
         }
         curl_close($ch);
 
