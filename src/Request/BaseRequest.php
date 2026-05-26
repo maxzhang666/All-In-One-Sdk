@@ -20,6 +20,8 @@ abstract class BaseRequest implements IRequest
      */
     protected $methodType = RequestMethodType::GET;
 
+    public $readTimeout;
+
     /**
      * 生成参数表
      * @return array

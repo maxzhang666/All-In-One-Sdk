@@ -10,6 +10,13 @@ use MaxZhang\AllInOne\Constants\RequestPostType;
  */
 interface IRequest
 {
+
+
+    /**
+     * @return mixed
+     */
+    function getReadTimeout();
+
     /**
      * 生成参数表
      * @return array

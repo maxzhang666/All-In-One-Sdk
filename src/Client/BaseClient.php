@@ -10,6 +10,16 @@ use MaxZhang\AllInOne\Request\IRequest;
 
 abstract class BaseClient implements IClient
 {
+    public $readTimeout = 10;
+
+    /**
+     * @return int
+     */
+    public function getReadTimeout(): int
+    {
+        return $this->readTimeout;
+    }
+
     abstract public function getRootServer(): string;
 
 
@@ -29,7 +39,7 @@ abstract class BaseClient implements IClient
         curl_setopt($ch, CURLOPT_FAILONERROR, false);
         curl_setopt($ch, CURLOPT_HEADER, false);
 
-        // curl_setopt($ch, CURLOPT_TIMEOUT, self::$readTimeout);
+        curl_setopt($ch, CURLOPT_TIMEOUT, $this->readTimeout);
         // curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, self::$connectTimeout);
 
 

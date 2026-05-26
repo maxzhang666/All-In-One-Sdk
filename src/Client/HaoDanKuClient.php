@@ -34,6 +34,8 @@ class HaoDanKuClient extends BaseClient implements IClient
 
         $paramsArray['apikey'] = $this->apikey;
 
+        $this->readTimeout = $request->getReadTimeout() ?? $this->readTimeout;
+
         try {
             $res = $this->curl($this->root . $request->getApiMethodUrl(), $paramsArray, $request->getMethodType(), [], $request->getPostType());
             $obj = json_decode($res, true);
