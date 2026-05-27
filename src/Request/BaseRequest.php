@@ -20,11 +20,11 @@ abstract class BaseRequest implements IRequest
      */
     protected $methodType = RequestMethodType::GET;
 
-    public $readTimeout;
+    public $readTimeout = 10;
 
     public function getReadTimeout()
     {
-        return $this->apiMethodUrl;
+        return $this->readTimeout;
     }
 
     /**
