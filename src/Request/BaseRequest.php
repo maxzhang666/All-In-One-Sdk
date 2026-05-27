@@ -22,6 +22,11 @@ abstract class BaseRequest implements IRequest
 
     public $readTimeout;
 
+    public function getReadTimeout()
+    {
+        return $this->apiMethodUrl;
+    }
+
     /**
      * 生成参数表
      * @return array
